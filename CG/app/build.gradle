@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "cg.demo.com.cg"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+
+        /*****  个推推送  ****/
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "sN0XNzvSFW528GtCiXqwd8",
+                GETUI_APP_KEY   : "1Q53d47KeF7VhWt8qdSER2",
+                GETUI_APP_SECRET: "YQ2whPt9vy6pMnHxbQOjF3"
+        ]
+        /** ****************************/
+
+        /*****个推推送共用 ****/
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+        /** ****************************/
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+
+    /** ***个推推送   ****/
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.getui:sdk:2.+'
+    //    compile 'com.android.support:support-v4:+'// 因为和v7包冲突 注释掉,目前未见有什么影响
+    /** ************/
+
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+}
