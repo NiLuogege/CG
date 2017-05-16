@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="cg.demo.com.cg">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    /***** 悬浮窗 ****/
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
     /***** 个推推送 ****/
     <!-- iBeancon功能所需权限 -->;
     <uses-permission android:name="android.permission.BLUETOOTH"/>
@@ -16,15 +20,19 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:name=".MyApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".silentCamera.MainActivity_silentCamera3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".silentCamera.PhotoWindowService"/>
 
         <!--个推推送-->
         <service

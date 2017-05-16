@@ -59,6 +59,10 @@ dependencies {
     compile 'com.getui:sdk:2.+'
     //    compile 'com.android.support:support-v4:+'// 因为和v7包冲突 注释掉,目前未见有什么影响
     /** ************/
-
+//gson
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //butterknife
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //design支持库
+    compile 'com.android.support:design:25.1.1'
 }

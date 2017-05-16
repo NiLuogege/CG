@@ -10,8 +10,8 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.well.ndemo.BuildConfig;
-import com.example.well.ndemo.utils.SettingsUtils;
+import cg.demo.com.cg.BuildConfig;
+import cg.demo.com.cg.utils.SettingsUtils;
 
 
 /**
@@ -30,7 +30,7 @@ public class PhotoWindowService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (BuildConfig.DEBUG) Log.e("PhotoWindowService", "onCreate");
+        Log.e("PhotoWindowService", "onCreate");
     }
 
     @Override

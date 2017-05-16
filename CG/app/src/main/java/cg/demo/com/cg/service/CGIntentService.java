@@ -11,6 +11,7 @@ import com.igexin.sdk.GTIntentService;
 import com.igexin.sdk.message.GTCmdMessage;
 import com.igexin.sdk.message.GTTransmitMessage;
 
+import cg.demo.com.cg.BuildConfig;
 import cg.demo.com.cg.bean.ImagePush;
 import cg.demo.com.cg.utils.SettingsUtils;
 
@@ -35,13 +36,12 @@ public class CGIntentService extends GTIntentService {
 
     /**
      * 拍照的格式为
-     *  {
-     "type": "cg",
-     "data": {
-     "url": "lalal"
-     }
-     }
-     *
+     * {
+     * "type": "cg",
+     * "data": {
+     * "url": "lalal"
+     * }
+     * }
      */
     @Override
     public void onReceiveMessageData(Context context, GTTransmitMessage msg) {
@@ -51,7 +51,8 @@ public class CGIntentService extends GTIntentService {
         ImagePush imagePush = gson.fromJson(s, ImagePush.class);
 
         String type = imagePush.type;
-if (TextUtils.equals(type, "cg")) {
+        if (BuildConfig.DEBUG) Log.e(TAG, "收到透传信息了 type= "+type);
+        if (TextUtils.equals(type, "cg")) {
 //            Handler handler = new Handler(getMainLooper());
 //            handler.post(new Runnable() {
 //                @Override

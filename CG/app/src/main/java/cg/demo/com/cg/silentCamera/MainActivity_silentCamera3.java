@@ -17,16 +17,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.example.well.ndemo.BuildConfig;
-import com.example.well.ndemo.R;
-import com.example.well.ndemo.silentCamera.Config4Camera;
-import com.example.well.ndemo.ui.activity.BaseActivity;
-import com.example.well.ndemo.utils.SettingsUtils;
-import com.example.well.ndemo.utils.SnackbarUtils;
-import com.example.well.ndemo.utils.SystemUtils;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cg.demo.com.cg.BuildConfig;
+import cg.demo.com.cg.R;
+import cg.demo.com.cg.ui.BaseActivity;
+import cg.demo.com.cg.utils.SettingsUtils;
+import cg.demo.com.cg.utils.SnackbarUtils;
+import cg.demo.com.cg.utils.SystemUtils;
+
 
 public class MainActivity_silentCamera3 extends BaseActivity {
     @Bind(R.id.ll_root)

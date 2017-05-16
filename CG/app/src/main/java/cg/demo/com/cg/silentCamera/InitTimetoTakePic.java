@@ -16,15 +16,14 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.widget.FrameLayout;
 
-import com.example.well.ndemo.silentCamera.Config4Camera;
-import com.example.well.ndemo.utils.SettingsUtils;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Locale;
+
+import cg.demo.com.cg.utils.SettingsUtils;
 
 import static com.igexin.sdk.GTServiceManager.context;
 
@@ -132,7 +131,7 @@ public class InitTimetoTakePic {
             mSurfaceViewFrame.removeAllViews();
             mSurfaceViewFrame.addView(mPreview);//将预览视图添加到桌面的父容器中
         }
-        LogUtils.v(mCamera == null ? "mCamera is null" : "mCamera is not null");
+        LogUtils.e(mCamera == null ? "mCamera is null" : "mCamera is not null");
         mCamera.startPreview();
         mHandler.sendEmptyMessageDelayed(2, Integer.valueOf(cameraStart) * 1000); //3s后拍照
     }

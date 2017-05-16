@@ -7,7 +7,7 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
 
-import com.example.well.ndemo.R;
+import cg.demo.com.cg.R;
 
 /**
  * 相机拍照的管理类 surfaceView在这里添加和去掉,相机在这里开启,在这里结束
